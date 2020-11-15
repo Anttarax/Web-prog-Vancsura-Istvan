@@ -7,7 +7,7 @@ class Beleptet_Model
 		$retData['eredmeny'] = "";
 		try {
 			$connection = Database::getConnection();
-			$sql = "select id, csaladi_nev, utonev, jogosultsag from felhasznalok where bejelentkezes='".$vars['login']."' and jelszo='".sha1($vars['password'])."'";
+			$sql = "select id, bejelentkezes, csaladi_nev, utonev, jogosultsag from felhasznalok where bejelentkezes='".$vars['login']."' and jelszo='".sha1($vars['password'])."'";
 			$stmt = $connection->query($sql);
 			$felhasznalo = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			switch(count($felhasznalo)) {
@@ -22,6 +22,7 @@ class Beleptet_Model
 										  Az üzemeltetők";
 					$_SESSION['userid'] =  $felhasznalo[0]['id'];
 					$_SESSION['userlastname'] =  $felhasznalo[0]['csaladi_nev'];
+					$_SESSION['username'] =  $felhasznalo[0]['bejelentkezes'];
 					$_SESSION['userfirstname'] =  $felhasznalo[0]['utonev'];
 					$_SESSION['userlevel'] = $felhasznalo[0]['jogosultsag'];
 					Menu::setMenu();
