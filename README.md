@@ -13,3 +13,6 @@ Importáld be az újonnan létrehozott adatbázisba a web2.sql fájlt, amit a pr
 A project mappáját másold be a XAMPP htdocs mappájába.
 
 Nyisd meg az oldalt.
+
+Interneten elérhető:
+https://g9imbh.000webhostapp.com/web2/
