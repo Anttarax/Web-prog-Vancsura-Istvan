@@ -3,10 +3,10 @@
     define('DATABASE', 'web2');
     define('USER', 'root');
     define('PASSWORD', '');
-    
+
     class Database {
         private static $connection = FALSE;
-        
+
         public static function getConnection() {
             if(! self::$connection) {
                 self::$connection = new PDO('mysql:host='.HOST.';dbname='.DATABASE, USER, PASSWORD,
