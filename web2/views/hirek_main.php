@@ -6,6 +6,7 @@
 </form>
 <h2><br><?= (isset($viewData['uzenet']) ? $viewData['uzenet'] : "") ?><br></h2>
 <h2>Hírek</h2>
+
 <?php
 $connection = Database::getConnection();
 $sql = "SELECT id, bejelentkezes, ido, szoveg FROM hirek";
